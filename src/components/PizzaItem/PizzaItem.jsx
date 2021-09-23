@@ -6,8 +6,7 @@ function PizzaItem(props){
     const addPizzaToOrder = (event) => {
         event.preventDefault;
         console.log(props.pizza)
-        //must edit reducers before sending 
-        //dispatch({type: 'SET_ORDER_REDUCER', data: props.pizza})
+        dispatch({type: 'ADD_PIZZA', data: props.pizza})
     }
     return(
         <>

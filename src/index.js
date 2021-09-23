@@ -27,8 +27,16 @@ const orderReducer = (state = {}, action) => {
     return state;
 }
 
+const pizzasSelectedReducer = (state = [], action) => {
+    if (action.type === 'ADD_PIZZA') {
+        return [...action, action.payload]
+    }
+    return state;
+}
+
+
 //store instance
-const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
+const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer, pizzasSelectedReducer}), applyMiddleware(logger),);
 
 
 ReactDOM.render(
