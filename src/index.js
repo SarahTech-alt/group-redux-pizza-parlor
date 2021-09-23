@@ -8,7 +8,6 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-
 const pizzaReducer = (state = [], action) => {
     // Sets book list with data from server
     if (action.type === 'SET_PIZZA_LIST') {
@@ -19,13 +18,13 @@ const pizzaReducer = (state = [], action) => {
   }
 
 
-
-
 //order reducer - object b/c only 1 order at a time
 const orderReducer = (state = {}, action) => {
     //TODO - set orderReducer
-    return state;
-}
+    if (action.type === 'ADD_ORDER_INFO') {
+        return action.payload;
+    }
+
 
 //store instance
 const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
