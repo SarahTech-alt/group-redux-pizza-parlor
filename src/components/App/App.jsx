@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import PizzaList from '../PizzaList/PizzaList'
+import Admin from '../Admin/Admin'
+import { useSelector, useDispatch } from 'react-redux'
 
-function App() {
+
 
 function App() {
   const dispatch = useDispatch();  
@@ -37,7 +40,7 @@ function App() {
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
-  
+
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
   
