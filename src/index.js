@@ -24,7 +24,7 @@ const orderReducer = (state = {}, action) => {
     if (action.type === 'ADD_ORDER_INFO') {
         return action.payload;
     }
-
+}
 
 //store instance
 const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
