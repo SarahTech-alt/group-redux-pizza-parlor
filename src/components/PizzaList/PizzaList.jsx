@@ -9,7 +9,12 @@ function PizzaList(props) {
     return(
         <>
         {/* Use a .map to pass in all pizza information to PizzaItem */}
-            {/*<PizzaItem/>*/}
+            {pizzaReducer.map( pizza =>
+                <PizzaItem
+                    pizza={pizza}
+                />
+            )}
+            
         </>
     )
 }
