@@ -24,6 +24,7 @@ const orderReducer = (state = {}, action) => {
     if (action.type === 'ADD_ORDER_INFO') {
         return action.payload;
     }
+    return state;
 }
 
 //store instance
