@@ -19,6 +19,9 @@ const pizzaReducer = (state = [], action) => {
 //order reducer - object b/c only 1 order at a time
 const orderReducer = (state = {}, action) => {
     //TODO - set orderReducer
+    if (action.type === 'ADD_ORDER_INFO') {
+        return action.payload;
+    }
     return state;
 }
 
