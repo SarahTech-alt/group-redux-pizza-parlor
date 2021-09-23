@@ -14,10 +14,13 @@ function OrderForm() {
     const handleSubmit = (event) => {
         //prevent default form behavior
         event.preventDefault();
+        //create action
+        action = {type: 'ADD_ORDER_INFO', payload: order};
         //dispatch here
-        dispatch(order);
+        dispatch(action);
         //reset inputs to default
         setOrder(defaultOrder);
+        //import moment.js - add time property to default. Use moment to add order time on submit button click
 
     }
     return(
