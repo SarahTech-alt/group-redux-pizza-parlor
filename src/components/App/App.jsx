@@ -6,32 +6,6 @@ import Admin from '../Admin/Admin'
 import { useSelector, useDispatch } from 'react-redux'
 
 
-function App() {
-  const dispatch = useDispatch();  
-  //Axios Get request for pizzas
-  //Dispatch pizzas to redux (within the .then in the get request)
-  useEffect(() => {
-    getPizzas();
-  }, []);
-
-  const getPizzas = () => {
-    axios.get('/api/pizza').then( response => {
-      console.log(response.data);
-      dispatch({ type: 'SET_ARTIST_LIST', payload: response.data, });
-    }).catch( error => {
-      console.log('error in getPizzas', error)
-    })
-  }
-
-
-
-
-
-
-
-
-
-
 
 function App() {
   const dispatch = useDispatch();  
