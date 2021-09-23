@@ -33,6 +33,25 @@ function App() {
 
 
 
+function App() {
+  const dispatch = useDispatch();  
+  //Axios Get request for pizzas
+  //Dispatch pizzas to redux (within the .then in the get request)
+  useEffect(() => {
+    getPizzas();
+  }, []);
+
+  const getPizzas = () => {
+    axios.get('/api/pizza').then( response => {
+      console.log(response.data);
+      dispatch({ type: 'SET_PIZZA_LIST', payload: response.data, });
+    }).catch( error => {
+      console.log('error in getPizzas', error)
+    })
+  }
+
+
+
   return (
     <div className='App'>
       <header className='App-header'>
