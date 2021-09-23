@@ -6,6 +6,7 @@ import Admin from '../Admin/Admin'
 import { useSelector, useDispatch } from 'react-redux'
 
 
+
 function App() {
   const dispatch = useDispatch();  
   //Axios Get request for pizzas
@@ -17,19 +18,20 @@ function App() {
   const getPizzas = () => {
     axios.get('/api/pizza').then( response => {
       console.log(response.data);
-      dispatch({ type: 'SET_ARTIST_LIST', payload: response.data, });
+      dispatch({ type: 'SET_PIZZA_LIST', payload: response.data, });
     }).catch( error => {
       console.log('error in getPizzas', error)
     })
   }
 
-
-
-
-
-
-
-
+  const getOrders = () => {
+    axios.get('/api/order').then(response =>{
+      console.log(response.data);
+      dispatch({type: 'SET_ORDER_LIST', payload: response.data});
+    }).catch(error => {
+      console.log('error in getPizzas', error);
+    })
+  }
 
 
 

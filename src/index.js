@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import logger from 'redux-logger';
+
 //import from redux
+import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-//storeinstance
-const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
 
-
-//pizza reducer 
 const pizzaReducer = (state = [], action) => {
-    //TODO - set pizzaReducer with pizza data from DB
+    // Sets book list with data from server
+    if (action.type === 'SET_PIZZA_LIST') {
+      return action.payload;
+    }
+    // No change to data
     return state;
-}
+  }
+
 
 //order reducer - object b/c only 1 order at a time
 const orderReducer = (state = {}, action) => {
@@ -22,11 +24,10 @@ const orderReducer = (state = {}, action) => {
     if (action.type === 'ADD_ORDER_INFO') {
         return action.payload;
     }
-    return state;
-}
+
 
 //store instance
-
+const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
 
 
 ReactDOM.render(
