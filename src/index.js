@@ -17,13 +17,14 @@ const pizzaReducer = (state = [], action) => {
     return state;
   }
 
-  const orderReducer = (state = [], action) => {
-    if (action.type === 'SET_ORDER_LIST'){
+//order reducer - object b/c only 1 order at a time
+const orderReducer = (state = {}, action) => {
+    //TODO - set orderReducer
+    if (action.type === 'ADD_ORDER_INFO') {
         return action.payload;
     }
-    // No change to data
     return state;
-  }
+}
 
 //store instance
 const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
