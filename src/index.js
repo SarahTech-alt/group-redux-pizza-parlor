@@ -17,14 +17,6 @@ const pizzaReducer = (state = [], action) => {
     return state;
   }
 
-  const orderReducer = (state = [], action) => {
-    if (action.type === 'SET_ORDER_LIST'){
-        return action.payload;
-    }
-    // No change to data
-    return state;
-  }
-
 //store instance
 const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
 
