@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
@@ -7,8 +6,6 @@ import logger from 'redux-logger';
 //import from redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-//storeinstance
-const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
 
 
 //pizza reducer 
@@ -23,7 +20,9 @@ const orderReducer = (state = {}, action) => {
     return state;
 }
 
-//store instance
+
+//storeinstance
+const storeInstance = createStore(combineReducers({pizzaReducer, orderReducer}), applyMiddleware(logger),);
 
 
 
