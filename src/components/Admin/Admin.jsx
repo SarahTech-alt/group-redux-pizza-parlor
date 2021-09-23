@@ -1,13 +1,20 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+
 
 function Admin(){
     
-    const orderInfo() => {
-        
-    }
+    const orderInfo = [];
 
-    const customerInfo = useSelector (store => store.orderReducer)
+    axios({
+        method: 'GET',
+        url: '/order'
+    }).then(response => {
+        orderInfo.push(response)
+    }).catch(error => {
+        console.log('There was an error getting the orders', error);
+    })
+
+    
     return(
         <>
         <h1>Step 3: Checkout</h1>
@@ -21,12 +28,12 @@ function Admin(){
           </tr>
         </thead>
         <tbody>
-          {reduxStore.checkoutReducer.map((item, i) =>
+          {orderInfo.map((item, i) =>
             (<tr key={i}>
-              <td>{orderReducer.name}</td>
-              <td>{orderReducer.time}</td>
-              <td>{orderReducer.type}</td>
-              <td>{orderReducer.cost}</td>
+              <td>{item.name}</td>
+              <td>{item.time}</td>
+              <td>{item.type}</td>
+              <td>{item.cost}</td>
             </tr>)
           )}
         </tbody>
