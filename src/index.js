@@ -10,9 +10,17 @@ import logger from 'redux-logger';
 
 
 const pizzaList = (state = [], action) => {
-    // TODO - set book list with data from server
+    // TODO - set Pizza list with data from server
     if (action.type === 'SET_PIZZA_LIST') {
       return action.payload;
+    }
+    // No change to data
+    return state;
+  }
+
+  const orderList = (state = [], action) => {
+    if (action.type === 'SET_ORDER_LIST'){
+        return action.payload;
     }
     // No change to data
     return state;
