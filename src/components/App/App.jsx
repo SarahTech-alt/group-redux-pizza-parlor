@@ -24,6 +24,15 @@ function App() {
     })
   }
 
+  const getOrders = () => {
+    axios.get('/api/order').then(response =>{
+      console.log(response.data);
+      dispatch({type: 'SET_ORDER_LIST', payload: response.data});
+    }).catch(error => {
+      console.log('error in getPizzas', error);
+    })
+  }
+
 
 
   return (
