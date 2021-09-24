@@ -13,7 +13,7 @@ function PizzaList(props) {
                 <PizzaItem
                     pizza={pizza}
                 />
-            )}
+           )}
             
         </>
     )
