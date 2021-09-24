@@ -39,6 +39,9 @@ const pizzasSelectedReducer = (state = [], action) => {
             }
         }
     }
+    if (action.type === 'GET_PIZZAS'){
+        return state;
+    }
     return state;
 }
 
