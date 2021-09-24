@@ -2,9 +2,11 @@
 import { useSelector } from "react-redux";
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import {useHistory} from 'react-router-dom';
 
 
 function Checkout() {
+    const history = useHistory();
     //declare array pizzaOrder from store
     const pizzaOrder = useSelector(store => store.pizzasSelectedReducer);
     //declare object orderInfo from store
@@ -54,6 +56,7 @@ function Checkout() {
             }
         }).then(response => {
             console.log('POST was successful');
+            history.push('/pizzas');
         }).catch(error => {
             console.log('There was an error getting the orders', error);
         })
