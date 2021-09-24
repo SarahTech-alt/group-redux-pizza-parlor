@@ -10,13 +10,18 @@ function PizzaItem(props){
         console.log(props.pizza)
         dispatch({type: 'ADD_PIZZA', payload: props.pizza})
         setAddPizzaCheck(false);
-        
+        console.log(props.total)
+        let newTotal = Number(props.total)
+        newTotal += Number(props.pizza.price);
+        props.setTotal(newTotal);
     }
     const removePizzaFromOrder = (event) => {
         event.preventDefault;
         dispatch({type: 'REMOVE_PIZZA', payload: props.pizza})
         setAddPizzaCheck(true);
-        
+        let newTotal = Number(props.total)
+        newTotal -= Number(props.pizza.price);
+        props.setTotal(newTotal);
     }
     return(
         <>

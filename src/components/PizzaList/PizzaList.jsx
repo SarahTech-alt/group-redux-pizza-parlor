@@ -6,8 +6,8 @@ import React, { useState, useEffect } from 'react';
 function PizzaList(props) {
     //use useSelector to access info from pizzaReducer 
     const reduxStore = useSelector(store => store);
-    const [total, setTotal] = useState(0)
-    const { pizzaReducer, pizzasSelectedReducer} = reduxStore;
+    const [total, setTotal] = useState(0);
+    const { pizzaReducer } = reduxStore;
     
     return(
         <>
@@ -18,6 +18,8 @@ function PizzaList(props) {
                     <div className="pizza-item-wrapper" key={pizza.id}>
                         <PizzaItem
                             pizza={pizza}
+                            total={total}
+                            setTotal={setTotal}
                         />
                     </div>
                 )}
