@@ -1,6 +1,7 @@
 //import useSelector to access reduxStore
 import { useSelector } from "react-redux";
 
+
 function Checkout() {
     //declare array pizzaOrder from store
     const pizzaOrder = useSelector(store => store.pizzasSelectedReducer);
@@ -11,7 +12,7 @@ function Checkout() {
     const calcTotal = () => {
         let total = 0;
         for (let item of pizzaOrder) {
-            total += parseFloat(item.cost);
+            total += parseFloat(item.price);
         }
         return total;
     }
@@ -37,7 +38,7 @@ function Checkout() {
                     {pizzaOrder.map((item, i) =>
                         (<tr key={i}>
                             <td>{item.name}</td>
-                            <td>${item.cost}</td>
+                            <td>${item.price}</td>
                         </tr>)
                     )}
                 </tbody>

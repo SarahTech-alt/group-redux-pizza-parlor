@@ -2,8 +2,10 @@
 import {useState} from 'react';
 //import dispatch
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function OrderForm() {
+    const history = useHistory();
     //declare dispatch
     const dispatch = useDispatch();
     //create defaultOrder obj
@@ -12,6 +14,7 @@ function OrderForm() {
     const [order, setOrder] = useState(defaultOrder);
     //function to handle submit
     const handleSubmit = (event) => {
+        history.push('/pizzas')
         //prevent default form behavior
         event.preventDefault();
         //create action
@@ -41,6 +44,7 @@ function OrderForm() {
                     </label>
                 </div>
                 <button className="next" type="submit">Next</button>
+
             </form>
         </>
     );

@@ -7,6 +7,7 @@ import PizzaItem from '../PizzaItem/PizzaItem';
 import Admin from '../Admin/Admin'
 import { useSelector, useDispatch } from 'react-redux'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Checkout from '../Checkout/Checkout';
 
 
 
@@ -33,26 +34,32 @@ function App() {
         <h1 className='App-title'>Prime Pizza</h1>
       </header>
       <Router>
-      <ul>
-            <li>
-              <Link to="/pizzas">Pizzas</Link>
-            </li>
-            <li>
-              <Link to="/form">Form</Link>
-            </li>
-            <li>
-              <Link to="/admin">Admin</Link>
-            </li>
-          </ul>
-      <Route path='/pizzas'>
-        <PizzaList />
-      </Route>
-      <Route path='/form'>
-        <OrderForm />
-      </Route>
-      <Route path='/admin'>
-        <Admin />
-      </Route>
+        <ul>
+          <li>
+            <Link to="/pizzas">Pizzas</Link>
+          </li>
+          <li>
+          <Link to='/checkout'>Checkout</Link>
+          </li>
+          <li>
+          <Link to="/form">Form</Link>
+          </li>
+          <li>
+          <Link to="/admin">Admin</Link>
+          </li>
+        </ul>
+        <Route path='/checkout'>
+          <Checkout />
+        </Route>
+        <Route path='/pizzas'>
+          <PizzaList />
+        </Route>
+        <Route path='/form'>
+          <OrderForm />
+        </Route>
+        <Route path='/admin'>
+          <Admin />
+        </Route>
       </Router>
       {/* <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p> */}
