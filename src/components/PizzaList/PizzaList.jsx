@@ -14,7 +14,8 @@ function PizzaList(props) {
                     key={pizza.id}
                     pizza={pizza}
                 />
-            )}
+           )}
+            
         </>
     )
 }
