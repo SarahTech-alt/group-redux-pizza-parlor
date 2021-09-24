@@ -27,9 +27,12 @@ function PizzaItem(props){
         <>
             <div className="img-wrapper">
                 <img src={props.pizza.image_path}></img>
-                <h2>{props.pizza.name}</h2>
+                <h2 className="pizzas">{props.pizza.name}</h2>
                 <p>{props.pizza.description}</p>
                 <p>${props.pizza.price}</p>
+                <button className="add"
+                onClick={addPizzaToOrder}>Add To Cart
+                </button>
                 
                 {addPizzaCheck ? <button onClick={addPizzaToOrder}>Add To Cart</button> : 
                 <button onClick={removePizzaFromOrder}>Remove From Cart</button>}
