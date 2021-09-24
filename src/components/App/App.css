@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: tomato;
   height: 70px;
   padding: 20px;
   color: white;
@@ -12,6 +12,20 @@
 
 .App-title {
   font-size: 2em;
+}
+
+
+
+.pizzas{
+  color: aquamarine;
+}
+
+.next{
+  background-color: yellowgreen;
+}
+
+.add{
+  background-color: cornflowerblue;
 }
 
 table {
@@ -24,3 +38,4 @@ th, td {
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
+
