@@ -1,0 +1,16 @@
+.pizza-item-wrapper{
+    border: 1px solid lightgray;
+    max-width: 400px;
+}
+img{
+    max-width: 390px;
+    height: auto;
+}
+
+.big-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+

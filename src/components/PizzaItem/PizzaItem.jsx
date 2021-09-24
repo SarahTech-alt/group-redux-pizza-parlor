@@ -10,11 +10,13 @@ function PizzaItem(props){
         console.log(props.pizza)
         dispatch({type: 'ADD_PIZZA', payload: props.pizza})
         setAddPizzaCheck(false);
+        
     }
     const removePizzaFromOrder = (event) => {
         event.preventDefault;
         dispatch({type: 'REMOVE_PIZZA', payload: props.pizza})
         setAddPizzaCheck(true);
+        
     }
     return(
         <>
