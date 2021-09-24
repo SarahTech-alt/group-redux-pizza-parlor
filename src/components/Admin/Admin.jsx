@@ -33,8 +33,8 @@ function Admin() {
         <>
         {/* Create table to display information
         from order table */}
-            <h1>Step 3: Checkout</h1>
-            <table>
+            <h1>Order history</h1>
+            <table className="order-history">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -48,10 +48,10 @@ function Admin() {
                     to display in the table*/}
                     {orderInfo.map((item, i) =>
                     (<tr key={i}>
-                        <td>{item.name}</td>
+                        <td>{item.customer_name}</td>
                         <td>{item.time}</td>
                         <td>{item.type}</td>
-                        <td>{item.cost}</td>
+                        <td>{item.total}</td>
                     </tr>)
                     )}
                 </tbody>
