@@ -40,7 +40,7 @@ function OrderForm() {
                         Pickup
                     </label>
                 </div>
-                <button type="submit">Next</button>
+                <button className="next" type="submit">Next</button>
             </form>
         </>
     );

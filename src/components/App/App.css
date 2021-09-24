@@ -13,7 +13,16 @@
 .App-title {
   font-size: 2em;
 }
-/* 
-img{
-  background-color: ;
-} */
+
+
+.pizzas{
+  color: aquamarine;
+}
+
+.next{
+  background-color: yellowgreen;
+}
+
+.add{
+  background-color: cornflowerblue;
+}
