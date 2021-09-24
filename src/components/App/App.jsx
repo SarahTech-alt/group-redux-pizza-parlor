@@ -38,9 +38,6 @@ function App() {
               <Link to="/pizzas">Pizzas</Link>
             </li>
             <li>
-              <Link to="/item">Pizza Item</Link>
-            </li>
-            <li>
               <Link to="/form">Form</Link>
             </li>
             <li>
@@ -49,9 +46,6 @@ function App() {
           </ul>
       <Route path='/pizzas'>
         <PizzaList />
-      </Route>
-      <Route path='/item'>
-        <PizzaItem />
       </Route>
       <Route path='/form'>
         <OrderForm />
