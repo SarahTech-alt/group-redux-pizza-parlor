@@ -4,19 +4,25 @@ import { useState, useEffect } from 'react';
 
 function Admin() {
 
+    // Create variable to hold retrieved data from the database
     const [orderInfo, setOrderInfo] = useState([]);
 
+    // Makes getOrderInfo available on page load
     useEffect(() => {
         console.log('in useEffect')
         getOrderInfo();
     }, []);
 
+    // Axios request to get the order information
+    // stored in the database
+    // put the retrieved information into orderInfo variable
     const getOrderInfo = () => {
         axios({
             method: 'GET',
-            url: '/order'
+            url: '/api/order'
         }).then(response => {
-            setOrderInfo.push(response.data)
+            setOrderInfo(response.data)
+            console.log(response.data);
         }).catch(error => {
             console.log('There was an error getting the orders', error);
         })
@@ -25,6 +31,8 @@ function Admin() {
 
     return (
         <>
+        {/* Create table to display information
+        from order table */}
             <h1>Step 3: Checkout</h1>
             <table>
                 <thead>
@@ -36,6 +44,8 @@ function Admin() {
                     </tr>
                 </thead>
                 <tbody>
+                    {/*Map over the objects in orderInfo
+                    to display in the table*/}
                     {orderInfo.map((item, i) =>
                     (<tr key={i}>
                         <td>{item.name}</td>
