@@ -44,9 +44,6 @@ function App() {
           <li>
           <Link to="/form">Form</Link>
           </li>
-          <li>
-          <Link to="/admin">Admin</Link>
-          </li>
         </ul>
         <Route path='/checkout'>
           <Checkout />

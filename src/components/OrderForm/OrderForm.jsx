@@ -9,12 +9,12 @@ function OrderForm() {
     //declare dispatch
     const dispatch = useDispatch();
     //create defaultOrder obj
-    const defaultOrder = {name: '', address: '', state: '', zip: '', method: ''};
+    const defaultOrder = {name: '', address: '', city: '', zip: '', method: ''};
     //state variable
     const [order, setOrder] = useState(defaultOrder);
     //function to handle submit
     const handleSubmit = (event) => {
-        history.push('/pizzas')
+        history.push('/checkout');
         //prevent default form behavior
         event.preventDefault();
         //create action
@@ -26,12 +26,14 @@ function OrderForm() {
         //import moment.js - add time property to default. Use moment to add order time on submit button click
 
     }
+
+    
     return(
         <>
             <form onSubmit={handleSubmit} className="addOrder">
                 <input required placeholder="Name" value={order.name} onChange={(event) => setOrder({...order, name: event.target.value})} />
                 <input required placeholder="Address" value={order.address} onChange={(event) => setOrder({...order, address: event.target.value})} />
-                <input required placeholder="State" value={order.state} onChange={(event) => setOrder({...order, state: event.target.value})} />
+                <input required placeholder="City" value={order.city} onChange={(event) => setOrder({...order, city: event.target.value})} />
                 <input required placeholder="ZIP" value={order.zip} onChange={(event) => setOrder({...order, zip: event.target.value})} />
                 <div className="radio">
                     <label>
