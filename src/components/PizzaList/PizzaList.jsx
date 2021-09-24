@@ -11,9 +11,10 @@ function PizzaList(props) {
         {/* Use a .map to pass in all pizza information to PizzaItem */}
             {pizzaReducer.map( pizza =>
                 <PizzaItem
+                    key={pizza.id}
                     pizza={pizza}
                 />
-            )}
+           )}
             
         </>
     )

@@ -1,13 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 
 function PizzaItem(props){
     const dispatch = useDispatch();
-    
+    const [addPizzaCheck, setAddPizzaCheck] = useState(true);
+
     const addPizzaToOrder = (event) => {
         event.preventDefault;
         console.log(props.pizza)
-        //must edit reducers before sending 
-        //dispatch({type: 'SET_ORDER_REDUCER', data: props.pizza})
+        dispatch({type: 'ADD_PIZZA', payload: props.pizza})
+        setAddPizzaCheck(false);
+    }
+    const removePizzaFromOrder = (event) => {
+        event.preventDefault;
+        dispatch({type: 'REMOVE_PIZZA', payload: props.pizza})
+        setAddPizzaCheck(true);
     }
     return(
         <>
@@ -19,6 +26,9 @@ function PizzaItem(props){
                 <button className="add"
                 onClick={addPizzaToOrder}>Add To Cart
                 </button>
+                
+                {addPizzaCheck ? <button onClick={addPizzaToOrder}>Add To Cart</button> : 
+                <button onClick={removePizzaFromOrder}>Remove From Cart</button>}
             </div>
         </>
     )

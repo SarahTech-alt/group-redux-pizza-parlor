@@ -7,7 +7,7 @@ function OrderForm() {
     //declare dispatch
     const dispatch = useDispatch();
     //create defaultOrder obj
-    const defaultOrder = {name: '', address: '', state: '', zip: '', method: 'delivery'};
+    const defaultOrder = {name: '', address: '', state: '', zip: '', method: ''};
     //state variable
     const [order, setOrder] = useState(defaultOrder);
     //function to handle submit
@@ -15,7 +15,7 @@ function OrderForm() {
         //prevent default form behavior
         event.preventDefault();
         //create action
-        action = {type: 'ADD_ORDER_INFO', payload: order};
+        const action = {type: 'ADD_ORDER_INFO', payload: order};
         //dispatch here
         dispatch(action);
         //reset inputs to default
@@ -32,11 +32,11 @@ function OrderForm() {
                 <input required placeholder="ZIP" value={order.zip} onChange={(event) => setOrder({...order, zip: event.target.value})} />
                 <div className="radio">
                     <label>
-                        <input type="radio" value="delivery" onClick={(event) => setOrder({...order, method: event.target.value})} />
+                        <input type="radio" name="method" value="delivery" onClick={(event) => setOrder({...order, method: event.target.value})} />
                         Delivery
                     </label>
                     <label>
-                        <input type="radio" value="pickup" onClick={(event) => setOrder({...order, method: event.target.value})} />
+                        <input type="radio" name="method" value="pickup" onClick={(event) => setOrder({...order, method: event.target.value})} />
                         Pickup
                     </label>
                 </div>
