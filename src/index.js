@@ -28,7 +28,16 @@ const orderReducer = (state = {}, action) => {
 
 const pizzasSelectedReducer = (state = [], action) => {
     if (action.type === 'ADD_PIZZA') {
-        return [...action, action.payload]
+        return [...state, action.payload]
+    } else if (action.type === 'REMOVE_PIZZA') {
+        for (let i = 0; i < state.length; i++){
+            console.log(state[i])
+            if (state[i].id === action.payload.id){
+                let newArray = [...state];
+                newArray.splice(i, 1);
+                return newArray;
+            }
+        }
     }
     return state;
 }
