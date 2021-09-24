@@ -30,11 +30,7 @@ function PizzaItem(props){
                 <h2 className="pizzas">{props.pizza.name}</h2>
                 <p>{props.pizza.description}</p>
                 <p>${props.pizza.price}</p>
-                <button className="add"
-                onClick={addPizzaToOrder}>Add To Cart
-                </button>
-                
-                {addPizzaCheck ? <button onClick={addPizzaToOrder}>Add To Cart</button> : 
+                {addPizzaCheck ? <button className="add" onClick={addPizzaToOrder}>Add To Cart</button> : 
                 <button onClick={removePizzaFromOrder}>Remove From Cart</button>}
             </div>
         </>
